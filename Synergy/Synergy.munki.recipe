@@ -6,14 +6,12 @@
 	<string>Downloads latest version of Synergy and imports it into a Munki repo.</string>
 	<key>Identifier</key>
 	<string>com.github.autopkg.arubdesu-recipes.munki.synergy</string>
-	<key>version</key>
-	<string>%VERSION%</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>Synergy</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps</string>
+		<key>NAME</key>
+		<string>Synergy</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -37,8 +35,6 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>MunkiPkginfoMerger</string>
 			<key>Arguments</key>
 			<dict>
 				<key>additional_pkginfo</key>
@@ -47,6 +43,8 @@
 					<string>%VERSION%</string>
 				</dict>
 			</dict>
+			<key>Processor</key>
+			<string>MunkiPkginfoMerger</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -60,5 +58,7 @@
 			<string>MunkiImporter</string>
 		</dict>
 	</array>
+	<key>version</key>
+	<string>%VERSION%</string>
 </dict>
 </plist>

@@ -8,10 +8,10 @@
 	<string>com.github.autopkg.arubdesu-recipes.munki.macid</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>MacID</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps</string>
+		<key>NAME</key>
+		<string>MacID</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -22,10 +22,6 @@
 			<string>Unlock your Mac with just your fingerprint.</string>
 			<key>display_name</key>
 			<string>MacID</string>
-			<key>name</key>
-			<string>%NAME%</string>
-			<key>unattended_install</key>
-			<true/>
 			<key>items_to_copy</key>
 			<array>
 				<dict>
@@ -37,6 +33,10 @@
 					<string>MacID.app</string>
 				</dict>
 			</array>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
@@ -46,17 +46,17 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>DmgCreator</string>
 			<key>Arguments</key>
 			<dict>
 				<key>dmg_megabytes</key>
 				<string>300</string>
-				<key>dmg_root</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
 				<key>dmg_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+				<key>dmg_root</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
 			</dict>
+			<key>Processor</key>
+			<string>DmgCreator</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
